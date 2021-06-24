@@ -1,8 +1,8 @@
 package LinkedList;
 
-public class Node<K> {
-    K key;
-    Node next;
+public class Node<K> implements INode<K>{
+    private K key;
+    private INode next;
 
     public Node() {
     }
@@ -16,15 +16,26 @@ public class Node<K> {
         return key;
     }
 
+    @Override
     public void setKey(K key) {
         this.key = key;
     }
 
-    public Node getNext() {
+    public INode<K> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    @Override
+    public void setNext(INode next) {
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder nodeString = new StringBuilder();
+        nodeString.append(key);
+        if(next != null)
+            nodeString.append(" ").append(next);
+        return nodeString.toString();
     }
 }
