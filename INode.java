@@ -1,14 +1,12 @@
 package LinkedList;
 
 public interface INode<K> {
-	    K getKey();
+    K getKey();
 
-	    void setKey(K key);
+    void setKey(K key);
 
-	    INode<K> getNext();
+    INode<K> getNext();
 
-	    void setNext(INode<K> next);
+    void setNext(INode<K> next);
 
-	}
-	
-	
+}
