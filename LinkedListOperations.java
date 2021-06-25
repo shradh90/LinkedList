@@ -53,6 +53,23 @@ public class LinkedListOperations {
 	        }
 	        size ++;
 	    }
+	    
+	    public void displayNode() {
+	        INode current = head;
+	        if(head == null)
+	            System.out.println("Linked List is empty");
+	        System.out.print("nodes : " );
+	        while (current != null) {
+	            if(current.getNext() != null) {
+	                System.out.print(current.getKey() + "->");
+	                current = current.getNext();
+	            }
+	            else {
+	                System.out.println(current.getKey());
+	                current = current.getNext();
+	            }
+	        }
+	    }
 
 	    public void deleteNodeFromBeginning() {
 	        if(head == null)
@@ -71,6 +88,28 @@ public class LinkedListOperations {
 	            while(tail.getNext() != null)
 	                current = current.getNext();
 	            current.setNext(null);
+	        }
+	        size--;
+	    }
+
+	    public void deleteNodeFromPosition(Integer element) {
+	        if(head == null)
+	            System.out.println("Linked List is empty!");
+	        else {
+	            INode currentNode = head;
+	            INode previousNode = null;
+	            while (currentNode != null){
+	                if(currentNode.getKey().equals(element)) {
+	                    if(previousNode == null){
+	                        head = currentNode.getNext();
+	                    }else{
+	                        previousNode.setNext(currentNode.getNext());
+	                    }
+	                    break;
+	                }
+	                previousNode = currentNode;
+	                currentNode = currentNode.getNext();
+	            }
 	        }
 	        size--;
 	    }
@@ -110,5 +149,6 @@ public class LinkedListOperations {
 	            }
 	        }
 	        System.out.println();
+	        System.out.println("Size of the Linked List is : " +size);
 	    }
 	}
