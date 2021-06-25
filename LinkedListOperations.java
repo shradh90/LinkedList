@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class LinkedListOperations {
-	 INode head;
+	  INode head;
 	    INode tail;
 	    int size;
 
@@ -52,23 +52,6 @@ public class LinkedListOperations {
 	            }
 	        }
 	        size ++;
-	    }
-	    
-	    public void displayNode() {
-	        INode current = head;
-	        if(head == null)
-	            System.out.println("Linked List is empty");
-	        System.out.print("nodes : " );
-	        while (current != null) {
-	            if(current.getNext() != null) {
-	                System.out.print(current.getKey() + "->");
-	                current = current.getNext();
-	            }
-	            else {
-	                System.out.println(current.getKey());
-	                current = current.getNext();
-	            }
-	        }
 	    }
 
 	    public void deleteNodeFromBeginning() {
@@ -150,5 +133,25 @@ public class LinkedListOperations {
 	        }
 	        System.out.println();
 	        System.out.println("Size of the Linked List is : " +size);
+	    }
+
+	    public void insertSortedList(Integer element1)
+	    {
+	        Node new_node = new Node(element1);
+	        INode current;
+
+	        if (head == null || (Integer) head.getKey() >= (Integer) new_node.getKey()) {
+	            new_node.next = head;
+	            head = new_node;
+	        }
+	        else {
+	            current = head;
+
+	            while (current.getNext() != null && (Integer)current.getNext().getKey() < (Integer)new_node.getKey())
+	                current = current.getNext();
+
+	            new_node.next = current.getNext();
+	            current.setNext(new_node);
+	        }
 	    }
 	}
