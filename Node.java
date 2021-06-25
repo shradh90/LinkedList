@@ -35,7 +35,7 @@ public class Node<K> implements INode<K>{
         StringBuilder nodeString = new StringBuilder();
         nodeString.append(key);
         if(next != null)
-            nodeString.append(" ").append(next);
+            nodeString.append("->").append(next);
         return nodeString.toString();
     }
 }
