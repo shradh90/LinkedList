@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class LinkedListOperations {
-		INode head;
+	  INode head;
 	    INode tail;
 	    int size;
 
@@ -36,10 +36,10 @@ public class LinkedListOperations {
 	            tail = newNode;
 	        }
 	        else {
-	            INode temp, current;
+	            INode temp, current = null;
 	            int count = (size % 2 == 0) ? (size/2) : ((size + 1) / 2);
 	            temp = head;
-	            current = null;
+	            //current = null;
 	            for(int i=0; i<count; i++) {
 	                current = temp;
 	                temp = temp.getNext();
@@ -50,21 +50,17 @@ public class LinkedListOperations {
 	        size++;
 	    }
 
-	    public void deleteNodeFromBeginning() {
-	        if(head == null)
-	            System.out.println("Linked List is empty!");
-	        else
-	            head = head.getNext();
-	    }
+
+	  
 
 	    public void displayNode() {
 	        INode current = head;
 	        if(head == null)
 	            System.out.println("Linked List is empty");
-	        System.out.print("nodes : " );
+	        System.out.print("Nodes are: " );
 	        while (current != null) {
 	            if(current.getNext() != null) {
-	                System.out.print(current.getKey() + "->");
+	                System.out.print(current.getKey() + " -> ");
 	                current = current.getNext();
 	            }
 	            else {
@@ -73,4 +69,17 @@ public class LinkedListOperations {
 	            }
 	        }
 	    }
-	}
+	    
+	    public void deleteNodeFromLast() {
+	    	  if(head == null)
+	              System.out.println("Linked List is empty!");
+	          else {
+	        	  INode currentNode =  head;
+	              while (currentNode.getNext().getNext() != null){
+	                  currentNode = currentNode.getNext();
+	              }
+	              currentNode.setNext(null);
+	              size --;
+	      }
+	    }  
+}

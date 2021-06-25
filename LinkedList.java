@@ -9,15 +9,19 @@ public class LinkedList {
 	        Node<Integer> myFirstNode = new Node<>(56);
 	        Node<Integer> mySecondNode = new Node<>(30);
 	        Node<Integer> myThirdNode = new Node<>(70);
+	       
 
 	        operations.addNodeInBeginnig(myFirstNode);
 	        operations.addNodeAtEnd(myThirdNode);
 	        operations.addNodeInMiddle(mySecondNode);
-
 	        operations.displayNode();
 
-	        operations.deleteNodeFromBeginning();
+	        operations.deleteNodeFromLast();   
 	        operations.displayNode();
 
+
+	       
+            
+ 
 	    }
 	}
