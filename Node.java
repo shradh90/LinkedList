@@ -1,41 +1,34 @@
 package LinkedList;
 
 public class Node<K> implements INode<K>{
-    private K key;
-    private INode next;
+	 K key;
+	    INode next;
 
-    public Node() {
-    }
+	    public Node() {
+	    }
 
-    public Node(K key) {
-        this.key = key;
-        this.next = null;
-    }
+	    public Node(K key) {
+	        this.key = key;
+	        this.next = null;
+	    }
 
-    public K getKey() {
-        return key;
-    }
+	    @Override
+	    public void setKey(K key) {
+	        this.key = key;
+	    }
 
-    @Override
-    public void setKey(K key) {
-        this.key = key;
-    }
+	    @Override
+	    public K getKey() {
+	        return key;
+	    }
 
-    public INode<K> getNext() {
-        return next;
-    }
+	    @Override
+	    public void setNext(INode<K> next) {
+	        this.next = next;
+	    }
 
-    @Override
-    public void setNext(INode next) {
-        this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder nodeString = new StringBuilder();
-        nodeString.append(key);
-        if(next != null)
-            nodeString.append(" ").append(next);
-        return nodeString.toString();
-    }
-}
+	    @Override
+	    public INode<K> getNext() {
+	        return next;
+	    }
+	}
