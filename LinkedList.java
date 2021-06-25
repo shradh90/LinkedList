@@ -16,7 +16,7 @@ public class LinkedList {
 	        operations.addNodeInMiddle(mySecondNode);
 	        operations.displayNode();
 
-	        operations.deleteNodeFromLast();   
+	        operations.searchElement();   
 	        operations.displayNode();
 
 
